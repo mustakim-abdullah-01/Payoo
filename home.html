@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+
+    <!-- Tailwind CSS + Daisy UI -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Google Font -- Outfit -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Outfit", sans-serif;
+        }
+    </style>
+    <title>Payoo | Home</title>
+</head>
+
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+
+    <!-- Header Section -->
+
+    <header class="pt-3 border-b-[1.5px] bg-white border-[#0808081A] shadow-sm flex justify-between">
+        <section class="w-11/12 mx-auto py-3 flex justify-between items-center">
+            <div class="left flex gap-2">
+                <div class="logo w-16">
+                    <img src="assets/logo.png" alt="">
+                </div>
+                <div class="balance">
+                    <h2 class="font-bold text-lg">
+                        $<span id="balance-money">45000</span>
+                    </h2>
+                    <p class="font-normal text-neutral/50">
+                        Available Balance
+                    </p>
+                </div>
+            </div>
+            <div class="right" onclick="alert('Press okay to continue')">
+                <a href="/index.html" class="rounded-lg border-[#0808081A] text-[#08080880] btn btn-outline"><i
+                        class="fa-solid fa-arrow-right-to-bracket rotate-180"></i>
+                    Log
+                    Out</a>
+            </div>
+        </section>
+    </header>
+
+    <!-- paragraphs -->
+
+    <section class="space-y-6 mx-auto px-6 py-8 rounded-b-3xl bg-white">
+        <div class="text-area space-y-2">
+
+            <h2 class="text-2xl font-bold text-neutral">Welcome to Pay<span class="text-primary">oo</span></h2>
+            <p class="text-neutral/50">
+                Enjoy easy and convenient financial services with us. Cashout charge is low and
+            </p>
+        </div>
+        <div class=" grid grid-cols-3 gap-4">
+            <button onclick="showonly('addmoney-sect')" ondblclick="addhidden('addmoney-sect')"
+                class="btn btn-primary px-4 btn-soft h-[89px] shadow flex-col rounded-xl">
+                <img src="assets/opt-1.png" alt="">
+                <p class="text-neutral/50 text-[14px] font-normal text-success">Add Money</p>
+            </button>
+            <button onclick="showonly('cashout-sect')" ondblclick="addhidden('cashout-sect')"
+                class=" btn btn-primary px-4 btn-soft h-[89px] shadow flex-col rounded-xl">
+                <img src="assets/opt-2.png" alt="">
+                <p class="text-neutral/50 text-[14px] font-normal text-success">Cashout</p>
+            </button>
+            <button class="btn btn-primary px-4 btn-soft h-[89px] shadow flex-col rounded-xl">
+                <img src="assets/opt-3.png" alt="">
+                <p class="text-neutral/50 text-[14px] font-normal text-success">Send Money</p>
+            </button>
+            <button class="btn btn-primary px-4 btn-soft h-[89px] shadow flex-col rounded-xl">
+                <img src="assets/opt-4.png" alt="">
+                <p class="text-neutral/50 text-[14px] font-normal text-success">Get Bonus</p>
+            </button>
+            <button class="btn btn-primary px-4 btn-soft h-[89px] shadow flex-col rounded-xl">
+                <img src="assets/opt-5.png" alt="">
+                <p class="text-neutral/50 text-[14px] font-normal text-success">Pay Bill</p>
+            </button>
+            <button class="btn btn-primary px-4 btn-soft h-[89px] shadow flex-col rounded-xl">
+                <img src="assets/opt-6.png" alt="">
+                <p class="text-neutral/50 text-[14px] font-normal text-success">Transactions</p>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Cashout section -->
+
+    <section id="cashout-sect" class="hidden mx-auto px-6 py-8">
+        <div class="flex justify-between items-center">
+            <h1 class="text-neutral font-semibold text-[18px]">Cashout</h1>
+        </div>
+        <div class="card bg-base-100 w-full rounded-3xl shadow">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label font-medium text-neutral/80">Agent Number</label>
+                    <input maxlength="11" id="agent-number" minlength="11" type="number"
+                        class="input rounded-full bg-base-200 ;]" placeholder="Enter 11 digit number" />
+                    <br>
+                    <label class="label font-medium text-neutral/80">Amount</label>
+                    <input maxlength="11" id="amount" minlength="11" type="number"
+                        class="input rounded-full bg-base-200 ;]" placeholder="Enter amount to withdraw" />
+                    <br>
+                    <label class="label font-medium text-neutral/80">4 Digit Pin</label>
+                    <input type="password" maxlength="4" id="cashout-pin" minlength="4"
+                        class="input rounded-full bg-base-200 " placeholder="Enter 4 Digit Pin" />
+                    <button id="cashout-btn" class="btn btn-primary rounded-full mt-4">Withdraw Money</button>
+                </fieldset>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add money section -->
+
+    <section id="addmoney-sect" class="hidden mx-auto px-6 py-8">
+        <div class="flex justify-between items-center">
+            <h1 class="text-neutral font-semibold text-[18px]">Add Money</h1>
+        </div>
+        <div class="card bg-base-100 w-full rounded-3xl shadow">
+            <div class="card-body">
+                <fieldset class="fieldset">
+
+
+                    <label class="label font-medium text-neutral/80">Select A Bank</label>
+                    <select id="add-money-bank" class="select w-full rounded-full bg-base-200">
+                        <option selected>Select Bank</option>
+                        <option>Dhaka Bank</option>
+                        <option>Dutch Bangla Bank</option>
+                        <option>City Bank</option>
+                    </select>
+                    <br>
+                    <label class="label font-medium text-neutral/80">Bank Account Number</label>
+                    <input maxlength="11" id="add-money-number" minlength="11" type="number"
+                        class="input w-full rounded-full bg-base-200 ;]" placeholder="Enter 11 digit account number" />
+                    <br>
+                    <label class="label font-medium text-neutral/80">Amount to Add</label>
+                    <input maxlength="11" id="add-money-amount" minlength="11" type="number"
+                        class="input w-full rounded-full bg-base-200 ;]" placeholder="Add amount to withdraw" />
+                    <br>
+                    <label class="label font-medium text-neutral/80">Pin Number</label>
+                    <input type="password" maxlength="4" id="add-money-pin" minlength="4"
+                        class="input w-full rounded-full bg-base-200 " placeholder="Enter 4 Digit Pin number" />
+                    <button id="add-money-btn" class="btn btn-primary rounded-full mt-4">Add Money</button>
+                </fieldset>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="scripts/machine.js"></script>
+
+    <script src="scripts/addmoney.js"></script>
+
+    <script src="scripts/cashout.js"></script>
+</body>
+
+</html>

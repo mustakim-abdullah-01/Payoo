@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+
+    <!-- Tailwind CSS + Daisy UI -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Google Font -- Outfit -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: "Outfit", sans-serif;
+        }
+    </style>
+    <title>Payoo | Login</title>
+</head>
+
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+    <!-- Login -->
+
+    <div class="max-w-[263px] pt-[210px] mx-auto">
+        <img src="assets/Logo-full.png" alt="">
+    </div>
+    <div class="form pt-8">
+        <div class="card bg-base-100 w-full max-w-sm shrink-0 mx-auto rounded-3xl shadow">
+            <div class="card-body">
+                <fieldset class="fieldset">
+                    <label class="label font-bold text-neutral">Mobile Number</label>
+                    <input maxlength="11" id="input-number" minlength="11" type="text"
+                        class="input rounded-full bg-base-200 ;]" value="01511220867" placeholder="Enter your number" />
+                    <br>
+                    <label class="label font-bold text-neutral">4 Digit Pin</label>
+                    <input type="password" maxlength="4" id="input-pin" minlength="4"
+                        class="input rounded-full bg-base-200 " placeholder="Enter 4 Digit Pin" />
+                    <button id="login-btn" class="btn btn-primary rounded-full mt-4">Login</button>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="scripts/login.js"></script>
+</body>
+
+</html>
