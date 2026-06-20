@@ -6,7 +6,7 @@ document.getElementById("login-btn").addEventListener("click", function () {
     // console.log(inputNumberValue)
     if (inputNumberValue === "1234" && pinValue === "1234") {
         alert("Login Succesful")
-        window.location.assign("/home.html")
+        window.location.assign("./home.html")
     } else {
         alert("Login Failed !")
 
